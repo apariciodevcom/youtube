@@ -11,3 +11,10 @@ CREATE TABLE public.yt_channels
 
 ALTER TABLE IF EXISTS public.yt_channels
     OWNER to postgres;
+    
+ALTER TABLE IF EXISTS public.yt_channels
+    ADD CONSTRAINT category_id FOREIGN KEY (category_id)
+    REFERENCES public.yt_category (category_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
