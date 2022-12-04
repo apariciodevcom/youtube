@@ -1,0 +1,17 @@
+CREATE TABLE public.yt_measurements
+(
+    measurement_id serial NOT NULL,
+    video_id integer NOT NULL,
+    comments integer NOT NULL,
+    global_views integer NOT NULL,
+    video_views integer NOT NULL,
+    video_likes integer NOT NULL,
+    measurement_date date NOT NULL,
+    PRIMARY KEY (measurement_id)
+);
+
+ALTER TABLE IF EXISTS public.yt_measurements
+    OWNER to postgres;
+
+COMMENT ON TABLE public.yt_measurements
+    IS 'Info from each measurement';
